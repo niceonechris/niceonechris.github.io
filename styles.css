@@ -81,3 +81,13 @@ a {
 .red-text {
     color: red;
 }
+
+@media only screen and (max-width: 600px) {
+    header {
+        padding: 15pt; /* Adjusted padding for mobile */
+    }
+    main {
+        width: 100%; /* Adjusted width for mobile */
+        padding: 10px; /* Adjusted padding for mobile */
+    }
+}
