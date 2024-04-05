@@ -49,7 +49,7 @@ main {
     line-height: 1.5;
     width: 35vw;
     padding-top: 100pt; /* Adjust padding-top */
-    padding-left: 10vw;
+    padding-left: 20vw;
     align-items: center;
     text-align: justify; /* Set text alignment to justify */
 }
