@@ -41,3 +41,43 @@
     </main>
 </body>
 </html>
+
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Floating Text</title>
+<style>
+  /* Styles for the container of the floating text */
+  .floating-text-container {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+  }
+
+  /* Styles for the floating text */
+  .floating-text {
+    position: absolute;
+    animation: floatAnimation 10s linear infinite;
+  }
+
+  /* Keyframes for the floating animation */
+  @keyframes floatAnimation {
+    0% {
+      transform: translate(0, 0);
+    }
+    100% {
+      transform: translate(200vw, 200vh);
+    }
+  }
+</style>
+</head>
+<body>
+<!-- This is where your floating text container will be placed -->
+<div class="floating-text-container">
+  <!-- This is where your floating text element will be placed -->
+  <div class="floating-text">Your Floating Text Here</div>
+</div>
+</body>
+</html>
