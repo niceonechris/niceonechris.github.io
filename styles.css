@@ -3,7 +3,7 @@ body {
     font-size: 10pt;
     background-color: #080f13;
     color: white;
-    text-align: left;
+    text-align: centre;
     margin: 0;
     padding: 20pt;
     line-height: 1.5;
@@ -16,7 +16,7 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 10pt 80pt; /* Adjust padding top and right */
+    padding: 15pt 80pt; /* Adjust padding top and right */
 }
 
 header h1 {
