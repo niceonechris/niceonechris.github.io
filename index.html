@@ -40,25 +40,33 @@
         </p>
     </main>
 </body>
-</html>
 
-<html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Floating Text</title>
+    
+    <!-- Floating text container -->
+<div class="floating-text-container">
+  <!-- Floating text element -->
+  <div class="floating-text">Screenings First Thursday of Everymonth at Voglemorn Bowling Club</div>
+</div>
+
+<!-- CSS for the floating text -->
 <style>
   /* Styles for the container of the floating text */
   .floating-text-container {
-    position: relative;
-    width: 100vw;
-    height: 100vh;
-    overflow: hidden;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 9999; /* Ensure it's above other content */
   }
 
   /* Styles for the floating text */
   .floating-text {
     position: absolute;
+    color: red; /* Change color as needed */
+    font-size: 24px; /* Change font size as needed */
+    font-weight: bold;
     animation: floatAnimation 10s linear infinite;
   }
 
@@ -72,12 +80,8 @@
     }
   }
 </style>
-</head>
-<body>
-<!-- This is where your floating text container will be placed -->
-<div class="floating-text-container">
-  <!-- This is where your floating text element will be placed -->
-  <div class="floating-text">Your Floating Text Here</div>
-</div>
-</body>
+
+
+    
 </html>
+
