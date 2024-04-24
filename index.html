@@ -8,13 +8,13 @@
     <style>
         /* CSS styles for image visibility */
         .hidden-image {
-            display: none; /* Initially hide the images */
-            position: absolute; /* Position the images absolutely */
-            top: 50%; /* Position the images at the center vertically */
-            left: 60%; /* Position the images at the center horizontally */
-            transform: translate(-50%, -50%); /* Center the images */
-            max-width: 350px; /* Set the maximum width of the images */
-            z-index: 999; /* Ensure the images appear above other content */
+    display: none;
+    position: fixed; /* Change position to fixed */
+    top: 50%; /* Position the images at the center vertically */
+    left: 50%; /* Position the images at the center horizontally */
+    transform: translate(-50%, -50%); /* Center the images */
+    max-width: 350px;
+    z-index: 999;
         }
         
         .hover-text:hover + .hidden-image {
