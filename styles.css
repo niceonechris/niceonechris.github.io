@@ -95,8 +95,8 @@ a {
     }
 }
 
-#hover-11:hover + img,
-#hover-10:hover + img {
+#hover-11:hover + #image-11,
+#hover-10:hover + #image-10 {
     display: block; /* Show the image when hovering over the respective text */
 }
 
