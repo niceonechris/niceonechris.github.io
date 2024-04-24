@@ -94,8 +94,3 @@ a {
         padding-left: 20pt; /* Adjusted padding-left for mobile */
     }
 }
-
-#hover-11:hover + #image-11,
-#hover-10:hover + #image-10 {
-    display: block;
-}
