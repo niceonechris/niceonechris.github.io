@@ -97,15 +97,5 @@ a {
 
 #hover-11:hover + #image-11,
 #hover-10:hover + #image-10 {
-    display: block; /* Show the image when hovering over the respective text */
-}
-
-.hidden-image {
-    display: none; /* Initially hide the images */
-    position: fixed; /* Position the images */
-    top: 50%; /* Position the images at the center vertically */
-    left: 50%; /* Position the images at the center horizontally */
-    transform: translate(-50%, -50%); /* Center the images */
-    max-width: 10%; /* Set the maximum width of the images */
-    z-index: 999; /* Ensure the images appear above other content */
+    display: block;
 }
