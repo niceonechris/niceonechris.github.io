@@ -101,13 +101,3 @@ a {
     display: block;
 }
 
-
-header h1 a {
-    color: white; /* Set the color to white */
-    text-decoration: none; /* Remove underline */
-}
-
-header h1 a:hover,
-header h1 a:active {
-    color: red; /* Maintain white color on hover and active states */
-}
