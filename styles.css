@@ -95,8 +95,19 @@ a {
     }
 }
 
-#hover-4:hover + .hidden-image,
+#hover-4:hover + .hidden-image,   /* ADD TO THIS FOR EACH NEW IMAGE */
 #hover-11:hover + .hidden-image,
 #hover-12:hover + .hidden-image {
     display: block;
+}
+
+
+header h1 a {
+    color: white; /* Set the color to white */
+    text-decoration: none; /* Remove underline */
+}
+
+header h1 a:hover,
+header h1 a:active {
+    color: red; /* Maintain white color on hover and active states */
 }
