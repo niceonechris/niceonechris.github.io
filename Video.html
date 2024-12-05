@@ -19,7 +19,6 @@
         </nav>
     </header>
     <main>
-
         <div id="video-area"></div>
     </main>
     <script>
@@ -27,7 +26,6 @@
         const videos = [
             { id: "2cabP6nhNto", title: "#19 Poppy Carter" },
             { id: "ZDHaP362VrU", title: "#18 Tyler Tesolin" }
-            
         ];
 
         // Track the highest z-index for videos
@@ -40,8 +38,12 @@
             const container = document.createElement("div");
             container.classList.add("video-container");
             container.style.position = "absolute";
-            container.style.top = `${Math.random() * 80}%`;
-            container.style.left = `${Math.random() * 80}%`;
+
+            // Set initial position with margin from edges
+            const margin = 50; // Minimum distance from edges (in pixels)
+            container.style.top = `${Math.random() * (window.innerHeight - margin * 2) + margin}px`;
+            container.style.left = `${Math.random() * (window.innerWidth - margin * 2) + margin}px`;
+
             container.style.cursor = "grab";
             container.style.border = "3px solid black"; // Black border around video box
             container.style.padding = "5px"; // Padding to create space between iframe and border
