@@ -24,13 +24,13 @@
     </main>
     <script>
         // Example YouTube videos
-    //    const videos = [
-       //     { id: "dQw4w9WgXcQ", title: "Never Gonna Give You Up" },
-       //     { id: "3JZ_D3ELwOQ", title: "Bohemian Rhapsody" },
-       //     { id: "C0DPdy98e4c", title: "Charlie Bit My Finger" }
-     //   ];
+        const videos = [
+            { id: "dQw4w9WgXcQ", title: "Never Gonna Give You Up" },
+            { id: "3JZ_D3ELwOQ", title: "Bohemian Rhapsody" },
+            { id: "C0DPdy98e4c", title: "Charlie Bit My Finger" }
+        ];
 
-        // Track the highest z-index
+        // Track the highest z-index for videos
         let highestZIndex = 1;
 
         // Random placement and draggable functionality
@@ -68,17 +68,29 @@
             });
 
             // Make draggable
+            let isDragging = false;
+            let offsetX, offsetY;
+
             container.onmousedown = function (e) {
                 e.preventDefault();
-                let offsetX = e.clientX - container.offsetLeft;
-                let offsetY = e.clientY - container.offsetTop;
+                isDragging = true;
+
+                // Save the current position of the mouse relative to the video container
+                offsetX = e.clientX - container.offsetLeft;
+                offsetY = e.clientY - container.offsetTop;
+
+                // Set z-index to bring the video to the front
+                container.style.zIndex = `${++highestZIndex}`;
 
                 document.onmousemove = function (e) {
-                    container.style.left = `${e.clientX - offsetX}px`;
-                    container.style.top = `${e.clientY - offsetY}px`;
+                    if (isDragging) {
+                        container.style.left = `${e.clientX - offsetX}px`;
+                        container.style.top = `${e.clientY - offsetY}px`;
+                    }
                 };
 
                 document.onmouseup = function () {
+                    isDragging = false;
                     document.onmousemove = null;
                     document.onmouseup = null;
                 };
