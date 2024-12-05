@@ -3,51 +3,85 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="styles.css">
     <title>FILM ADJACENT - Home</title>
     <style>
         /* CSS styles for image visibility */
         .hidden-image {
-    display: none;
-    position: fixed; /* Change position to fixed */
-    top: 50%; /* Position the images at the center vertically */
-    left: 60%; /* Position the images at the center horizontally */
-    transform: translate(-50%, -60%); /* Center the images */
-    max-width: 350px;
-    z-index: 999;
+            display: none;
+            position: fixed;
+            top: 50%; 
+            left: 40%; 
+            transform: translate(-50%, -60%);
+            max-width: 350px;
+            z-index: 999;
         }
-        
+
         .hover-text:hover + .hidden-image {
-            display: block; /* Show the image when hovering over the respective text */
+            display: block; 
+        }
+
+        /* Styles for the hidden video pop-up */
+        .video-popup {
+            display: none;
+            position: fixed;
+            top: 50%;
+            left: 60%; /* Positioned next to the image */
+            transform: translate(-50%, -50%);
+            width: 560px;
+            height: 315px;
+            z-index: 1000;
+            border: 2px solid #000;
+            background-color: #fff;
+        }
+
+        /* Make the pop-up draggable */
+        .video-popup-header {
+            padding: 10px;
+            background-color: #333;
+            color: #fff;
+            cursor: move;
+            text-align: center;
+            font-weight: bold;
+        }
+
+        .video-popup iframe {
+            width: 100%;
+            height: calc(100% - 40px); /* Adjust for header height */
+            border: none;
+        }
+
+        /* Hover behavior to show both image and video popup */
+        .hover-text:hover + .hidden-image + .video-popup {
+            display: block;
         }
     </style>
-    
- <link rel="shortcut icon" type="image/png" href="favicon.png">
-    
 </head>
 
-
-    
 <body>
     <header>
         <h1><a href="index.html" style="color: white; text-decoration: none;"><b>FILM ADJACENT</b></a></h1>
         <nav>
             <ul>
-        
                 <li><a href="about.html">About</a></li>
-              <li style="margin-left: 10px;"><a href="contact.html">Contact</a></li> <!-- Added margin-left -->
+                <li style="margin-left: 10px;"><a href="contact.html">Contact</a></li>
             </ul>
         </nav>
     </header>
     <main>
+        <p class="hover-text" id="hover-19">
+            #19<br>Experiments in Youth Storytelling and Radical Education: 1 minute films and BTS from Te Kura-a-iwi O Whakatupuranga Rua Mano documentary film 
+            <i style="color: red"> presented by Poppy Carter with special guest Adrian Leason on 04/12/24 </i>
+        </p>
+        <!-- FA19 image -->
+        <img src="FA19.jpg" alt="Hover Image 19" class="hidden-image">
 
-    <p class="hover-text" id="hover-19">#19<br>Experiments in Youth Storytelling and Radical Education: 1 minute films and BTS from Te Kura-a-iwi O Whakatupuranga Rua Mano documentary film <i style="color: red"> presented by Poppy Carter with special guest Adrian Leason on 04/12/24 </i> 
-       </p>
-         <img src="FA19.jpg" alt="Hover Image 9" class="hidden-image">
+        <!-- Video popup next to FA19 -->
+        <div class="video-popup" id="videoPopup">
+            <div class="video-popup-header" id="videoPopupHeader">Drag Me</div>
+            <iframe src="https://youtu.be/HSKlDXo2ekA" allowfullscreen></iframe>
+        </div>
 
-        
-        
-          <p class="hover-text" id="hover-18">#18<br>The Cinema We Need: Films from the Canadian Underground. 'The Last Days of Contrition' (Richard Kerr 1988). 'Cruel Rhythm' (Richard Kerr 1991).<i style="color: red"> Presented by Tyler Shane Tesolin on 06/11/23</i> 
+             <p class="hover-text" id="hover-18">#18<br>The Cinema We Need: Films from the Canadian Underground. 'The Last Days of Contrition' (Richard Kerr 1988). 'Cruel Rhythm' (Richard Kerr 1991).<i style="color: red"> Presented by Tyler Shane Tesolin on 06/11/23</i> 
        </p>
          <img src="FA18.jpg" alt="Hover Image 8" class="hidden-image">
         
@@ -112,51 +146,32 @@
         
         <p> #1<br> Awkward and Dark: 'Autobiographical Scene Number 6882' (Ruben Östlund 2005), 'Incident at a Bank' (Östlund 2009) & The Dinner Scene from 'The Square' (Östlund 2015) and 'World Of Glory' (Roy Anderson 1991). <i style="color: red">Presented by Tristan Keillor on 4/5/23</i>
         </p>
-        
+
     </main>
+
+    <script>
+        // Make the video popup draggable
+        const videoPopup = document.getElementById('videoPopup');
+        const header = document.getElementById('videoPopupHeader');
+
+        let offsetX = 0, offsetY = 0, isDragging = false;
+
+        header.addEventListener('mousedown', (e) => {
+            isDragging = true;
+            offsetX = e.clientX - videoPopup.offsetLeft;
+            offsetY = e.clientY - videoPopup.offsetTop;
+        });
+
+        document.addEventListener('mousemove', (e) => {
+            if (isDragging) {
+                videoPopup.style.left = `${e.clientX - offsetX}px`;
+                videoPopup.style.top = `${e.clientY - offsetY}px`;
+            }
+        });
+
+        document.addEventListener('mouseup', () => {
+            isDragging = false;
+        });
+    </script>
 </body>
-
-    
-    <!-- Floating text container -->
-<div class="floating-text-container">
-  <!-- Floating text element -->
-  <div class="floating-text">Screenings every month at The Undercurrent</div>
-</div>
-
-<!-- CSS for the floating text -->
-<style>
-  /* Styles for the container of the floating text */
-  .floating-text-container {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    pointer-events: none;
-    z-index: 9999; /* Ensure it's above other content */
-  }
-
-  /* Styles for the floating text */
-  .floating-text {
-    position: absolute;
-    color: red; /* Change color as needed */
-    font-size: 20px; /* Change font size as needed */
-    font-weight: bold;
-    animation: floatAnimation 20s linear infinite;
-  }
-
-  /* Keyframes for the floating animation */
-  @keyframes floatAnimation {
-    0% {
-      transform: translate(0, 0);
-    }
-    100% {
-      transform: translate(200vw, 200vh);
-        animation-duration: 20s;
-    }
-  }
-</style>
-
-
-    
 </html>
