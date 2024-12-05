@@ -8,7 +8,9 @@
     <link rel="shortcut icon" type="image/png" href="favicon.png">
     <style>
         body {
+            margin: 0;
             font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
         }
         header {
             background-color: #333;
@@ -30,14 +32,15 @@
         }
         main {
             padding: 20px;
-            position: relative;
-            min-height: 500px;
-            border: 1px solid #ccc;
+            background-color: white;
         }
         .video-container {
             position: absolute;
             width: 300px;
             cursor: grab;
+            border: 1px solid #ddd;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            background-color: white;
         }
         .video-container iframe {
             width: 100%;
@@ -46,10 +49,10 @@
         }
         .video-title {
             text-align: center;
-            background-color: #f9f9f9;
             padding: 5px;
             font-size: 14px;
-            border: 1px solid #ccc;
+            font-weight: bold;
+            color: #333;
         }
     </style>
 </head>
@@ -71,7 +74,7 @@
     <script>
         // Example YouTube videos
         const videos = [
-            { id: "HSKlDXo2ekA", title: "Never Gonna Give You Up" },
+            { id: "dQw4w9WgXcQ", title: "Never Gonna Give You Up" },
             { id: "3JZ_D3ELwOQ", title: "Bohemian Rhapsody" },
             { id: "C0DPdy98e4c", title: "Charlie Bit My Finger" }
         ];
