@@ -1,1 +1,39 @@
-
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Film Adjacent - Video</title>
+     <link rel="shortcut icon" type="image/png" href="favicon.png">
+</head>
+<body>
+    <header>
+          <h1><a href="index.html" style="color: white; text-decoration: none;"><b>FILM ADJACENT</b></a></h1>
+        <nav>
+            <ul>
+               
+                <li><a href="video.html">Video </a></li>
+                <li style="margin-left: 10px;"><a href="contact.html">Contact</a></li> <!-- Added margin-left -->
+            </ul>
+        </nav>
+    </header>
+    <main>
+           <p>FILM ADJACENT is a Wellington-based film collective for experimental cinema
+            </p>
+           <p>We invite academics and filmmakers to curate regular screenings. Our goal is to facilitate the mass proliferation of audio-visual artworks that enrich the human sensorium
+            </p>
+           <p> Screenings are the first Wednesday of every month at The Undercurrent. 118 Tory Street, Te Aro, Wellington 6011
+            </p>
+           <p> Organised by Christopher Thompson and Tyler Shane Tesolin. Founded by Christopher Thompson, Tristan Kellior and Tyler Shane Tesolin.  We are a non profit. 
+            </p>
+            <p>Supported by Wellington City Council and the Wellington Independant Arts Trust</p>
+           
+          
+              <!--  <img src="VGM5.JPG"  style="width: 700px; height: auto; position: relative; top: 20px; left: 0px;">  -->
+            <img src="VGM1.jpg"  style="width: 700px; height: auto; position: relative; top: 20px; left: 0px;">
+            <!--   <img src="VGM2.JPG"  style="width: 700px; height: auto; position: relative; top: 20px; left: 0px;"> -->
+            <img src="LM.jpg"  style="width: 700px; height: auto; position: relative; top: 20px; left: 0px;">
+    </main>
+</body>
+</html>
