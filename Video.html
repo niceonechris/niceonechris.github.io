@@ -1,6 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
-
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Film Adjacent - Video</title>
+    <link rel="shortcut icon" type="image/png" href="favicon.png">
+</head>
 <body>
     <header>
         <h1><a href="index.html" style="color: white; text-decoration: none;"><b>FILM ADJACENT</b></a></h1>
@@ -33,17 +39,24 @@
         videos.forEach(video => {
             const container = document.createElement("div");
             container.classList.add("video-container");
+            container.style.position = "absolute";
             container.style.top = `${Math.random() * 80}%`;
             container.style.left = `${Math.random() * 80}%`;
+            container.style.cursor = "grab";
 
             const iframe = document.createElement("iframe");
             iframe.src = `https://www.youtube.com/embed/${video.id}`;
+            iframe.style.width = "300px";
+            iframe.style.height = "170px";
+            iframe.style.border = "none";
             iframe.allow = "accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture";
             iframe.allowFullscreen = true;
 
             const title = document.createElement("div");
-            title.classList.add("video-title");
             title.textContent = video.title;
+            title.style.textAlign = "center";
+            title.style.fontSize = "14px";
+            title.style.marginTop = "5px";
 
             container.appendChild(iframe);
             container.appendChild(title);
@@ -51,7 +64,6 @@
 
             // Bring to front on click or drag
             container.addEventListener("mousedown", () => {
-                // Set a high z-index to bring to the front
                 container.style.zIndex = `${++highestZIndex}`;
             });
 
