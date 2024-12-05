@@ -19,7 +19,7 @@
         </nav>
     </header>
     <main>
-        <p>FILM ADJACENT mini-lectures and introductions are scattered below</p>
+        <p>FILM ADJACENT mini-lectures and introductions are collected below</p>
         <div id="video-area"></div>
     </main>
     <script>
@@ -43,12 +43,15 @@
             container.style.top = `${Math.random() * 80}%`;
             container.style.left = `${Math.random() * 80}%`;
             container.style.cursor = "grab";
+            container.style.border = "3px solid black"; // Black border around video box
+            container.style.padding = "5px"; // Padding to create space between iframe and border
+            container.style.borderRadius = "8px"; // Optional: rounded corners for the container
 
             const iframe = document.createElement("iframe");
             iframe.src = `https://www.youtube.com/embed/${video.id}`;
-            iframe.style.width = "300px";
-            iframe.style.height = "170px";
-            iframe.style.border = "none";
+            iframe.style.width = "400px"; // Increase the width
+            iframe.style.height = "225px"; // Increase the height
+            iframe.style.border = "none"; // Remove iframe border
             iframe.allow = "accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture";
             iframe.allowFullscreen = true;
 
