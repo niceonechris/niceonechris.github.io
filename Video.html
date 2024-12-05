@@ -39,10 +39,14 @@
             container.classList.add("video-container");
             container.style.position = "absolute";
 
-            // Set initial position with margin from edges
+            // Define margins from the edges
             const margin = 50; // Minimum distance from edges (in pixels)
-            container.style.top = `${Math.random() * (window.innerHeight - margin * 2) + margin}px`;
-            container.style.left = `${Math.random() * (window.innerWidth - margin * 2) + margin}px`;
+            const containerWidth = 400 + 20; // Video width + padding
+            const containerHeight = 225 + 20 + 20; // Video height + padding + title height
+
+            // Randomize positions while respecting margins and container dimensions
+            container.style.top = `${Math.random() * (window.innerHeight - containerHeight - margin * 2) + margin}px`;
+            container.style.left = `${Math.random() * (window.innerWidth - containerWidth - margin * 2) + margin}px`;
 
             // Apply a random shade of grey to the container background
             const randomGrey = Math.floor(Math.random() * 156) + 50; // Shades between 50-205 (darker grey)
@@ -54,8 +58,8 @@
 
             const iframe = document.createElement("iframe");
             iframe.src = `https://www.youtube.com/embed/${video.id}`;
-            iframe.style.width = "400px"; // Increase the width
-            iframe.style.height = "225px"; // Increase the height
+            iframe.style.width = "400px"; // Video width
+            iframe.style.height = "225px"; // Video height
             iframe.style.border = "none"; // Remove iframe border
             iframe.allow = "accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture";
             iframe.allowFullscreen = true;
@@ -92,8 +96,15 @@
 
                 document.onmousemove = function (e) {
                     if (isDragging) {
-                        container.style.left = `${e.clientX - offsetX}px`;
-                        container.style.top = `${e.clientY - offsetY}px`;
+                        container.style.left = `${Math.min(
+                            Math.max(e.clientX - offsetX, margin),
+                            window.innerWidth - containerWidth - margin
+                        )}px`;
+
+                        container.style.top = `${Math.min(
+                            Math.max(e.clientY - offsetY, margin),
+                            window.innerHeight - containerHeight - margin
+                        )}px`;
                     }
                 };
 
