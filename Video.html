@@ -44,9 +44,12 @@
             container.style.top = `${Math.random() * (window.innerHeight - margin * 2) + margin}px`;
             container.style.left = `${Math.random() * (window.innerWidth - margin * 2) + margin}px`;
 
+            // Apply a random shade of grey to the container background
+            const randomGrey = Math.floor(Math.random() * 156) + 50; // Shades between 50-205 (darker grey)
+            container.style.backgroundColor = `rgb(${randomGrey}, ${randomGrey}, ${randomGrey})`;
+
             container.style.cursor = "grab";
-            container.style.border = "3px solid black"; // Black border around video box
-            container.style.padding = "5px"; // Padding to create space between iframe and border
+            container.style.padding = "10px"; // Padding for space inside the container
             container.style.borderRadius = "8px"; // Optional: rounded corners for the container
 
             const iframe = document.createElement("iframe");
