@@ -104,7 +104,10 @@ a {
 #hover-16:hover + .hidden-image,
 #hover-17:hover + .hidden-image,
 #hover-18:hover + .hidden-image,
-#hover-19:hover + .hidden-image,{
+#hover-19:hover + .hidden-image,
+#hover-20:hover + .hidden-image,
+
+{
     display: block;
 }
 
