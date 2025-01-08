@@ -30,6 +30,7 @@ nav ul {
     list-style-type: none;
     padding: 0;
     margin: 0;
+ 
 }
 
 nav ul li {
@@ -53,6 +54,7 @@ main {
     text-align: justify; /* Set text alignment to justify */
 }
 
+
 h2 {
     font-size: 10pt;
     color: white;
@@ -70,32 +72,14 @@ p {
 a {
     text-decoration: none; /* Remove the underline */
 }
-
 .email-link {
     text-decoration: none;
     color: red; /* Set the desired text color */
 }
 
+
 .red-text {
     color: red;
-}
-
-/* Event container for number alignment */
-.event-container {
-    display: flex;
-    align-items: flex-start; /* Ensures number aligns to the top of the text */
-    margin-bottom: 15px; /* Adds spacing between entries */
-}
-
-.event-number {
-    width: 50px; /* Adjust width as needed */
-    text-align: right;
-    margin-right: 10px;
-    font-weight: bold;
-}
-
-.event-text {
-    flex: 1; /* Ensures text takes the remaining space */
 }
 
 /* Media query for mobile devices */
@@ -113,7 +97,7 @@ a {
 
 #hover-4:hover + .hidden-image,   /* ADD TO THIS FOR EACH NEW IMAGE */
 #hover-11:hover + .hidden-image,
-#hover-12:hover + .hidden-image,
+#hover-12:hover + .hidden-image
 #hover-13:hover + .hidden-image, 
 #hover-14:hover + .hidden-image,
 #hover-15:hover + .hidden-image,
@@ -121,6 +105,8 @@ a {
 #hover-17:hover + .hidden-image,
 #hover-18:hover + .hidden-image,
 #hover-19:hover + .hidden-image,
-#hover-20:hover + .hidden-image {
+#hover-20:hover + .hidden-image,
+
+{
     display: block;
 }
