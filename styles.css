@@ -77,6 +77,11 @@ a {
     color: red; /* Set the desired text color */
 }
 
+.number-align {
+    display: inline-block;
+    text-align: left;
+    width: 50px; /* Adjust width as needed */
+}
 
 .red-text {
     color: red;
