@@ -7,6 +7,7 @@
     <title>Film Adjacent - Video</title>
     <link rel="shortcut icon" type="image/png" href="favicon.png">
     <style>
+        /* Original Styles */
         body {
             font-family: Arial, sans-serif;
             margin: 0;
@@ -43,11 +44,13 @@
             padding: 20px;
         }
 
+        /* Specific Styles for the Video Section */
         #video-area {
             display: flex;
             flex-direction: column;
             gap: 20px;
             align-items: center;
+            margin-top: 30px; /* Add spacing from the rest of the page */
         }
 
         .video-container {
@@ -69,6 +72,11 @@
             margin-top: 10px;
             font-size: 14px;
         }
+
+        /* Ensure the rest of the page retains its spacing and alignment */
+        main > *:not(#video-area) {
+            margin-bottom: 20px; /* Add spacing for other main content */
+        }
     </style>
 </head>
 <body>
@@ -83,6 +91,7 @@
         </nav>
     </header>
     <main>
+        <!-- Add any other content for the page above the video section -->
         <div id="video-area"></div>
     </main>
     <script>
