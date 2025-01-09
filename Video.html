@@ -6,6 +6,70 @@
     <link rel="stylesheet" href="styles.css">
     <title>Film Adjacent - Video</title>
     <link rel="shortcut icon" type="image/png" href="favicon.png">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background-color: #333;
+            color: white;
+            padding: 15px;
+            text-align: center;
+        }
+
+        nav ul {
+            list-style: none;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin: 0;
+        }
+
+        nav ul li {
+            display: inline;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-size: 16px;
+        }
+
+        main {
+            padding: 20px;
+        }
+
+        #video-area {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            align-items: center;
+        }
+
+        .video-container {
+            width: 400px;
+            background-color: #f0f0f0;
+            padding: 10px;
+            border-radius: 8px;
+            text-align: center;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        .video-container iframe {
+            width: 100%;
+            height: 225px;
+            border: none;
+        }
+
+        .video-container div {
+            margin-top: 10px;
+            font-size: 14px;
+        }
+    </style>
 </head>
 <body>
     <header>
@@ -13,8 +77,8 @@
         <nav>
             <ul>
                 <li><a href="about.html">About</a></li>
-                <li style="margin-left: 10px;"><a href="contact.html">Contact</a></li>
-                <li style="margin-left: 10px;"><a href="Video.html">Video</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="video.html">Video</a></li>
             </ul>
         </nav>
     </header>
@@ -26,96 +90,26 @@
         const videos = [
             { id: "2cabP6nhNto", title: "#19 Poppy Carter" },
             { id: "ZDHaP362VrU", title: "#18 Tyler Tesolin" },
-            { id: "WKjrDbB5upM", title: "#20 Hannah van Seventer"}
-            
+            { id: "WKjrDbB5upM", title: "#20 Hannah van Seventer" }
         ];
 
-        // Track the highest z-index for videos
-        let highestZIndex = 1;
-
-        // Random placement and draggable functionality
         const videoArea = document.getElementById("video-area");
 
         videos.forEach(video => {
             const container = document.createElement("div");
             container.classList.add("video-container");
-            container.style.position = "absolute";
-
-            // Define margins from the edges
-            const margin = 50; // Minimum distance from edges (in pixels)
-            const containerWidth = 400 + 20; // Video width + padding
-            const containerHeight = 225 + 20 + 20; // Video height + padding + title height
-
-            // Randomize positions while respecting margins and container dimensions
-            container.style.top = `${Math.random() * (window.innerHeight - containerHeight - margin * 2) + margin}px`;
-            container.style.left = `${Math.random() * (window.innerWidth - containerWidth - margin * 2) + margin}px`;
-
-            // Apply a random shade of grey to the container background
-            const randomGrey = Math.floor(Math.random() * 156) + 50; // Shades between 50-205 (darker grey)
-            container.style.backgroundColor = `rgb(${randomGrey}, ${randomGrey}, ${randomGrey})`;
-
-            container.style.cursor = "grab";
-            container.style.padding = "10px"; // Padding for space inside the container
-            container.style.borderRadius = "8px"; // Optional: rounded corners for the container
 
             const iframe = document.createElement("iframe");
             iframe.src = `https://www.youtube.com/embed/${video.id}`;
-            iframe.style.width = "400px"; // Video width
-            iframe.style.height = "225px"; // Video height
-            iframe.style.border = "none"; // Remove iframe border
             iframe.allow = "accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture";
             iframe.allowFullscreen = true;
 
             const title = document.createElement("div");
             title.textContent = video.title;
-            title.style.textAlign = "center";
-            title.style.fontSize = "14px";
-            title.style.marginTop = "5px";
 
             container.appendChild(iframe);
             container.appendChild(title);
             videoArea.appendChild(container);
-
-            // Bring to front on click or drag
-            container.addEventListener("mousedown", () => {
-                container.style.zIndex = `${++highestZIndex}`;
-            });
-
-            // Make draggable
-            let isDragging = false;
-            let offsetX, offsetY;
-
-            container.onmousedown = function (e) {
-                e.preventDefault();
-                isDragging = true;
-
-                // Save the current position of the mouse relative to the video container
-                offsetX = e.clientX - container.offsetLeft;
-                offsetY = e.clientY - container.offsetTop;
-
-                // Set z-index to bring the video to the front
-                container.style.zIndex = `${++highestZIndex}`;
-
-                document.onmousemove = function (e) {
-                    if (isDragging) {
-                        container.style.left = `${Math.min(
-                            Math.max(e.clientX - offsetX, margin),
-                            window.innerWidth - containerWidth - margin
-                        )}px`;
-
-                        container.style.top = `${Math.min(
-                            Math.max(e.clientY - offsetY, margin),
-                            window.innerHeight - containerHeight - margin
-                        )}px`;
-                    }
-                };
-
-                document.onmouseup = function () {
-                    isDragging = false;
-                    document.onmousemove = null;
-                    document.onmouseup = null;
-                };
-            };
         });
     </script>
 </body>
