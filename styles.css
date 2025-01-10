@@ -41,6 +41,28 @@ nav ul li {
 
 }
 
+
+
+
+
+/* Style for the numbers to the left */
+.number {
+    font-weight: regular;
+    color: white;  /* Blue color for the numbers */
+    margin-right: 25px;  /* Space between the number and the text */
+}
+
+/* Adjust the hover text for proper layout */
+.hover-text {
+    display: flex;  /* Make the parent a flex container */
+    align-items: center;  /* Vertically align the number and the text */
+}
+
+
+
+
+
+
 nav ul li a {
     text-decoration: none;
     color: white; 
