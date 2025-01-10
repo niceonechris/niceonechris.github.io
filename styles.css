@@ -116,15 +116,16 @@ a {
 /* Media query for mobile devices */
 @media only screen and (max-width: 768px) {
     header {
-        padding: 15pt 20pt; /* Adjusted padding for mobile */
+        padding: 5pt 10pt; /* Adjusted padding for mobile */
     }
     main {
         width: 100%; /* Adjusted width for mobile */
-        padding: 20pt; /* Adjusted padding for mobile */
-        padding-top: 20pt; /* Adjusted padding-top for mobile */
-        padding-left: 20pt; /* Adjusted padding-left for mobile */
+        padding: 10pt; /* Adjusted padding for mobile */
+        padding-top: 10pt; /* Adjusted padding-top for mobile */
+        padding-left: 10pt; /* Adjusted padding-left for mobile */
     }
 }
+
 
 #hover-4:hover + .hidden-image,   /* ADD TO THIS FOR EACH NEW IMAGE */
 #hover-11:hover + .hidden-image,
