@@ -49,7 +49,7 @@ nav ul li {
 .number {
     font-weight: regular;
     color: white;  /* Blue color for the numbers */
-    margin-right: 25px;  /* Space between the number and the text */
+    margin-right: 30px;  /* Space between the number and the text */
 }
 
 /* Adjust the hover text for proper layout */
