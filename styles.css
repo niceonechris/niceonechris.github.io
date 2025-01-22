@@ -139,6 +139,7 @@ a {
 #hover-18:hover + .hidden-image,
 #hover-19:hover + .hidden-image,
 #hover-20:hover + .hidden-image,
+#hover-21:hover + .hidden-image,
 
 {
     display: block;
