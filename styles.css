@@ -127,6 +127,24 @@ a {
     }
 }
 
+.spin-text {
+  display: inline-block;
+  animation: spin 20s linear infinite;
+  transform-origin: center center;
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+
+
+
 
 #hover-4:hover + .hidden-image,   /* ADD TO THIS FOR EACH NEW IMAGE */
 #hover-11:hover + .hidden-image,
