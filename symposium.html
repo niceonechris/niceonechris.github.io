@@ -38,4 +38,47 @@
             <img src="LM.jpg"  style="width: 700px; height: auto; position: relative; top: 20px; left: 0px;"> -->
     </main>
 </body>
+
+
+
+    <!-- Floating text container -->
+<div class="floating-text-container">
+  <!-- Floating text element -->
+  <div class="floating-text">!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!</div>
+</div>
+
+<!-- CSS for the floating text -->
+<style>
+  /* Styles for the container of the floating text */
+  .floating-text-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 9999; /* Ensure it's above other content */
+  }
+
+  /* Styles for the floating text */
+  .floating-text {
+    position: absolute;
+    color: red; /* Change color as needed */
+    font-size: 20px; /* Change font size as needed */
+    font-weight: bold;
+    animation: floatAnimation 20s linear infinite;
+  }
+
+  /* Keyframes for the floating animation */
+  @keyframes floatAnimation {
+    0% {
+      transform: translate(50vw, -20);
+    }
+    100% {
+      transform: translate(50vw, 120vh);
+        animation-duration: 10s;
+    }
+  }
+
+
 </html>
